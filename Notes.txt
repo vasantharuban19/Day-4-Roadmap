@@ -1,0 +1,74 @@
+Contents:
+XMLHttpRequest
+Introduction to functions
+function & return keyword
+types of function
+
+XMLHttpRequest:-
+=> step 1:- Create a XHR Object
+XHR = XmlHttpRequest
+syntax to create a XHR Object:-
+var/let/const varaiblename = new XMLHttpRequest();
+variablename = userdefined (proper names)
+new = new is keyword used to create a Object
+
+=> step 2:- Opening a connection to the server
+3 parameters are there to open a connection to the server
+1. HttpMethods(GET, POST, PUT, DELETE)
+2. url (from where to get the data)
+3. true/false (Optional)
+syntax:- varaiblename.open("GET","URL",true)
+open = it is method used to open a connection to the server
+
+=> step 3:- Initiating a bridge to the server / sending a request / sending a connection
+syntax:- varaiblename.send();
+send = it is method used to send a request to the server.
+
+=> step 4:- server response
+//onload= It is a event.
+//function (annoymous function)
+syntax:-
+function(){
+    
+}
+//response
+
+
+//!step 1:- Create a XHR Object
+var request = new XMLHttpRequest();
+//*step 2:- Opening a connection to the server
+request.open("GET","https://restcountries.com/v3.1/all",true)
+//?step 3:- Initiating a bridge to the server / sending a request / sending a connection
+request.send();
+//!step 4:- server response
+request.onload = function(){
+    var data = request.response;
+    //console.log(data);
+    var result = JSON.parse(data);
+    console.log(result);
+    //console.log(result[0].name.common);
+    //console.log(result[249].area);
+    //for accessing multiple values use looping
+    for(var i=0;i<result.length;i++){
+        console.log(result[i].area);
+    }
+}
+----------------------------------------------------------------------------------------------
+Introduction to functions
+function & return keyword
+types of function
+
+Introduction to functions:- 
+Function :- Set of statements that performs specific tasks.
+syntax:- 
+function functionname(parameter){
+    //set of statements
+}
+functionname();   //function call
+
+//function always have return
+//return:- 
+to reduce the number of time code executed.
+//functionname is userdefined
+//function is used for DRY codes.
+//one function will have only one return keyword.
